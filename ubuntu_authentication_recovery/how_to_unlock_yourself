@@ -1,0 +1,49 @@
+Help I deleted the one account that was in the sudo group
+
+
+So one day I was working on my OpenVPN server, and I accidentally removed the one account I had that has sudo privileges (this is for Ubuntu 16.04 LTS). So I decided to document the fix. First when you boot up the OS it will give you the option to go into recovery. It will prompt you to again go into recovery mode which you will accept (if it doesn’t oh well). Next it will give you a list of options, you need to select root (or anything like “root shell”). Essentially you will drop a root shell. 
+
+
+Mount /
+
+
+From here the first thing you will need to do is mount the entire file system “/”. To do so run this command.
+
+
+“mount -o rw,remount /”
+
+
+Restore sudo permissions
+
+
+Now that we have mounted the entire file system, we can now run commands. To add a user to the sudoers group use this command. The user we will add is “guyinatuxedo”. Change it to whatever your circumstance requires.
+
+
+“usermod -aG sudo guyinatuxedo”
+
+
+Change password
+
+
+Now let’s say Ryan from the future has just changed his password and forgets it, and needs to change it. You can use this command while in the root recovery shell to change an account. We will be changing the password for the account named “guyinatuxedo”, change it to whatever your circumstances requires.
+
+
+“passwd guyinatuxedo”
+
+
+Add new user account
+
+
+Now incase if Ryan from the future has deleted the one account on ubuntu (except for root) here is the command that you can use in the root recovery shell to make an account, and add it to sudoers. We will be creating the account named “guyinatuxedo”, you need to change that to match your circumstance.
+
+
+
+
+“adduser guyinatuxedo”
+“adduser guyinatuxedo sudo”
+
+
+I messed up Pam, what now?
+
+
+Now if you mess up with pam (access control) you can fix that through this console. It will take a while to list everything that could go wrong, so I won’t. Just backtrace through what you did and try to correct it. If not just burn it all down to the ground and start from scratch.
