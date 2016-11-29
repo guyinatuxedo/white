@@ -1,0 +1,84 @@
+If you ever want to kill the current command, press Ctrl + “6” + Shift
+Router
+
+
+Display all possible choices
+“?”
+
+
+Turn on privileged commands, enter user privileged mode
+“enable”
+
+
+Enter configuration mode, from privileged exec mode 
+“Router#configure”
+
+
+Revert to previous “shell” mode
+“exit”
+
+
+Configure ip interface FastEthernet 1/0, in Privileged Exec Mode
+“Router(config)#interface FastEthernet 1/0”
+
+
+Assign a static ip address to an interface
+“Router(config-if)#ip address 192.168.1. 255.255.255.0”
+
+
+Turn on an interface, disable shutdown
+“Router(config-if)#no shutdown”
+
+
+To configure or make dhcp pool named “pool0”
+“Router(config)#ip dhcp pool pool0
+
+
+To assign a network address range to the pool
+“Router(dhcp-config)#network 192.168.1.0 255.255.255.0”
+
+
+To assign a default router to the pool
+“Router(dhcp-config)#default-router 192.168.1.1”
+
+
+To enable a password
+“Router(config)#enable password supersecretpassword“
+
+
+
+
+Switch
+
+
+Turn on privileged commands, enter user privileged mode
+“Enable”
+
+
+Turn on privileged exec mode
+“Switch#config”
+
+
+To configure the vlan database
+“Switch#vlan database”
+
+
+To add a vlan to the database
+“Switch(vlan)#vlan 11”
+
+
+To name a vlan
+“Switch(vlan)#vlan 11 name IA”
+
+
+To configure an interface 
+“Switch(config)#interface FastEthernet 0/1”
+
+
+To change a port’s interface to a specific VLAN
+“Switch(config-if)#switchport access vlan 11”
+
+
+
+
+https://docs.google.com/document/d/1W7Mm2__jPunVHYekvlTvs8KUIoAfKmaQ2mc_CKbZjaE/edit?usp=sharing
